@@ -29,6 +29,11 @@ namespace W4rSyst3m.Persistence.EF
             _dbContext.SaveChanges();
         }
 
+        public async Task CommitAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
+
         public void Dispose()
         {
             if (IsDisposed) return;
@@ -55,6 +60,11 @@ namespace W4rSyst3m.Persistence.EF
                 (entity) => {
                     entity.CurrentValues.SetValues(entity.OriginalValues);
                     entity.State = EntityState.Unchanged; });
+        }
+
+        public async Task RollBackAsync()
+        {
+            await Task.Run(() => RollBack());
         }
     }
 }

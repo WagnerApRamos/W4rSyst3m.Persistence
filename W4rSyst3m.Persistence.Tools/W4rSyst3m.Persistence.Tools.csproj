@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IReadOnlyRepository.cs" />
+    <Compile Include="IReadOnlyRepositoryAsync.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IRepositoryAsync.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="PersistenceException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

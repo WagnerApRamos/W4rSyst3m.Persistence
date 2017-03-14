@@ -51,8 +51,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="W4rSyst3m.Persistence.Tools, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\W4rSyst3m.Persistence.Tools.1.0.1\lib\net461\W4rSyst3m.Persistence.Tools.dll</HintPath>
+    <Reference Include="W4rSyst3m.Persistence.Tools, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\W4rSyst3m.Persistence.Tools.1.0.2\lib\net461\W4rSyst3m.Persistence.Tools.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="W4rSyst3m.Tools.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseReadOnlyRepository.Async.cs" />
     <Compile Include="BaseReadOnlyRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

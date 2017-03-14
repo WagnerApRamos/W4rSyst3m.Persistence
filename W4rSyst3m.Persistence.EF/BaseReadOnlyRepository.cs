@@ -12,8 +12,9 @@ using W4rSyst3m.Tools.Utilities;
 
 namespace W4rSyst3m.Persistence.EF
 {
-    public class BaseReadOnlyRepository<T, K, C> :
-        IReadOnlyRepository<T, K>
+    public partial class BaseReadOnlyRepository<T, K, C> :
+        IReadOnlyRepository<T, K>,
+        IReadOnlyRepositoryAsync<T, K>
         where T : class
         where C : DbContext
     {
@@ -57,7 +58,6 @@ namespace W4rSyst3m.Persistence.EF
         public T Get(Expression<Func<T, bool>> expression)
         {
             return _dbSet.FirstOrDefault(expression);
-
         }
 
         public T Get(K id)
@@ -78,11 +78,17 @@ namespace W4rSyst3m.Persistence.EF
         {
             return _dbSet.Where(expression).ToList();
         }
+
+        public ICollection<T> FromSql(string sqlCommand, params object[] parameters)
+        {
+            return _dbSet.SqlQuery(sqlCommand, parameters).ToList();
+        }
     }
 
     public class BaseReadOnlyRepository<T, C> :
         BaseReadOnlyRepository<T, int, C>,
-        IReadOnlyRepository<T>
+        IReadOnlyRepository<T>,
+        IReadOnlyRepositoryAsync<T>
         where T : class
         where C : DbContext
     {
