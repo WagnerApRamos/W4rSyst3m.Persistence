@@ -7,7 +7,7 @@ using W4rSyst3m.Persistence.Tools;
 
 namespace W4rSyst3m.Persistence.EF
 {
-    public class BaseRepository<T, K, C> :
+    public abstract class BaseRepository<T, K, C> :
         BaseReadOnlyRepository<T, K, C>,
         IRepository<T, K>
         where T : class
@@ -41,7 +41,7 @@ namespace W4rSyst3m.Persistence.EF
         }
     }
 
-    public class BaseRepository<T, C> :
+    public abstract class BaseRepository<T, C> :
         BaseRepository<T, int, C>,
         IRepository<T>
         where T : class

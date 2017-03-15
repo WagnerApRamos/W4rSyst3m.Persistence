@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace W4rSyst3m.Persistence.EF
 {
-    public partial class BaseReadOnlyRepository<T, K, C>
+    public abstract partial class BaseReadOnlyRepository<T, K, C>
     {
         public async Task<bool> AnyAsync()
         {

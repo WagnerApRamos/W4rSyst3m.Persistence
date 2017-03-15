@@ -12,7 +12,7 @@ using W4rSyst3m.Tools.Utilities;
 
 namespace W4rSyst3m.Persistence.EF
 {
-    public partial class BaseReadOnlyRepository<T, K, C> :
+    public abstract partial class BaseReadOnlyRepository<T, K, C> :
         IReadOnlyRepository<T, K>,
         IReadOnlyRepositoryAsync<T, K>
         where T : class
@@ -85,7 +85,7 @@ namespace W4rSyst3m.Persistence.EF
         }
     }
 
-    public class BaseReadOnlyRepository<T, C> :
+    public abstract class BaseReadOnlyRepository<T, C> :
         BaseReadOnlyRepository<T, int, C>,
         IReadOnlyRepository<T>,
         IReadOnlyRepositoryAsync<T>

@@ -10,7 +10,7 @@ using W4rSyst3m.Persistence.Tools;
 
 namespace W4rSyst3m.Persistence.EF
 {
-    public class UnitOfWork<C> :
+    public abstract class UnitOfWork<C> :
         IUnitOfWork,
         IDisposable
         where C : DbContext
